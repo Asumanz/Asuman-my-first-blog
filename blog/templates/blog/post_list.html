@@ -1,11 +1,21 @@
 <html>
 	<head>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<title>Django Girls's blog</title>
 	</head>
 	<body>
 		<div>
 			<hi><a href="">Django Girls Blog</a>
 		</div>
+
+		{% for post in posts %}
+		<div>
+			<p>published: {{ post.published_date }}</p>
+			<h1><a href="">{{ post.title }}</a></h1>
+			<p>{{ post.text|linebreaksbr }}</p>
+		</div>
+		{% endfor %}
 
 		<div>
 			<p>Published: 17.10.2016, 14:40</p>
@@ -22,6 +32,9 @@
 			<p>Have you ever wondered how to create a website but have never had enough motivation to start? Have you ever thought that the software world is too complicated for you to even try doing something on your own?</p>
 			<p>Well, we have good news for you! Programming is not as hard as it seems and we want to show you how fun it can be.</p>
 			<p>Come and have a great hands-on experience with Django framework and Python in this amazing one day workshop on October 29, 2016 at Livingstone International University courtesy of Django Girls Mbale, Google Developer Group (GDG - Mbale) and powered by Google.</p>
+		</div>
+		<div>
+			{{ posts }}
 		</div>
 	</body>
 </html>
